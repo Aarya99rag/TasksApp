@@ -22,3 +22,5 @@ Node.js
 Express.js
 MongoDB (Mongoose for MongoDB ODM)
 JWT (JSON Web Tokens) for authentication
+
+Please consider refering package.json file for all the dependencies.
