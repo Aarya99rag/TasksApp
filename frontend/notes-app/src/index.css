@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind CSS has different "layers" of CSS that help organize how styles are applied:
+
+Base: Defines global styles (e.g., resetting defaults like margin, padding, fonts).
+Components: Defines reusable UI components (e.g., buttons, cards, headers).
+Utilities: Defines the utility classes (e.g., bg-blue-500, text-lg, p-4) that you use for styling. */
+
+@layer base {
+    /* Allows adding custom base-level styles. Base-level styles are the foundational CSS rules that apply to all elements on a webpage. These are default, foundational styles applied to elements like html, body, h1, etc., ensuring consistency across the project. Allows your custom styles to integrate smoothly with Tailwind's defaults. Ensures your styles don't get overwritten by Tailwind's utilities*/
+    html{
+        font-family: "Poppins","sans-serif";
+    }
+
+    body{
+        background-color: #fdfeff;
+        overflow-x: hidden;
+        /* prevents horizontal scrolling entirely, not just hiding the scrollbar. Content beyond the viewport width is clipped. */
+    }
+}
+
+@layer components{
+    /* The @layer components directive is used to define custom components inside the "components" layer. It allows you to create styles for things like buttons, cards, or any other UI element that you'd like to reuse throughout your app. Instead of writing utility classes everywhere, you can define a class once in the components layer and reuse it throughout your app.*/
+    .input-box{
+        @apply w-full text-sm bg-transparent border-[1.5px] px-5 py-3 rounded mb-4 outline-none
+    }
+
+    .btn-primary{
+        @apply w-full text-sm bg-primary text-white p-2 rounded my-1 hover:bg-blue-600
+    }
+
+    .icon-btn{
+        @apply text-xl text-slate-300 cursor-pointer hover:text-primary
+    }
+
+    .input-label{
+        @apply text-xs text-slate-400
+    }
+}
